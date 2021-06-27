@@ -27,7 +27,7 @@ router.post('/donor', async (req, res) => {
             let donor = new Donor({ email, description, name, longitude, latitude });
             await donor.save();
     
-            res.json({
+            res.send({
                 message: 'user saved',
                 donor
             })
