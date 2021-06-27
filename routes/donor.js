@@ -15,6 +15,8 @@ router.get('/donor', async (req, res) => {
 
 router.post('/donor', async (req, res) => {
     try {
+        console.log(req);
+        console.log(req.body);
         const { name, description, email, longitude, latitude } = req.body;
         if (!name || !description || !email) {
             res.status(400).json({
@@ -22,7 +24,7 @@ router.post('/donor', async (req, res) => {
             })
         }
         else {
-            let donor = new Donor({ email, description, email, longitude, latitude });
+            let donor = new Donor({ email, description, name, longitude, latitude });
             await donor.save();
     
             res.json({
