@@ -5,7 +5,7 @@ const Donor = mongoose.model('Donor', new mongoose.Schema({
     description: String,
     email: String,
     longitude: String,
-    latitue: String
+    latitude: String
 }))
 
 module.exports = Donor;
